@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TON 618 WALLET </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css?v=14" />
+  </head>
+  <body>
+    <div class="top-actions">
+      <button
+        type="button"
+        id="discreet-btn"
+        class="top-btn discreet-btn hidden"
+        aria-pressed="false"
+        title="Hide sensitive info"
+      >
+        <svg class="icon icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+        <svg class="icon icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+          <line x1="1" y1="1" x2="23" y2="23" />
+        </svg>
+        <span class="top-btn-label">Discreet</span>
+      </button>
+      <button type="button" id="settings-btn" class="top-btn settings-btn hidden" title="Account settings">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+        <span class="top-btn-label">Settings</span>
+      </button>
+      <button type="button" id="logout-btn" class="top-btn logout-btn hidden" title="Log out">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+          <polyline points="16 17 21 12 16 7" />
+          <line x1="21" y1="12" x2="9" y2="12" />
+        </svg>
+        <span class="top-btn-label">Log out</span>
+      </button>
+    </div>
+
+    <div class="page">
+      <aside class="stage">
+        <div class="stage-grid"></div>
+        <div class="blackhole" aria-hidden="true">
+          <div class="bh-halo"></div>
+          <div class="bh-tilt">
+            <div class="bh-disk"></div>
+          </div>
+          <div class="bh-lens"></div>
+          <div class="bh-core"></div>
+          <div class="bh-tilt bh-tilt-front">
+            <div class="bh-disk"></div>
+          </div>
+          <div class="bh-orbit">
+            <span class="bh-planet"></span>
+          </div>
+        </div>
+        <div class="stage-content">
+          <p class="brand">TON 618<br /></p>
+          <p class="stage-copy">
+            Pulling in the Future of Finance.
+          </p>
+          <p class="stage-meta">TON 618 · Testnet · Encrypted keys</p>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="workspace-top">
+          <button type="button" id="back-btn" class="nav-back-btn" disabled title="Back to previous screen">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+            <span>Back</span>
+          </button>
+          <p class="workspace-label" id="workspace-label">Account</p>
+        </header>
+
+        <section id="auth-panel" class="view">
+          <h1 class="view-title">Enter</h1>
+          <p class="view-sub">Log in or create an account to open your wallet.</p>
+
+          <div class="mode-switch" role="tablist" aria-label="Auth mode">
+            <button type="button" class="mode active" data-tab="login">Log in</button>
+            <button type="button" class="mode" data-tab="signup">Sign up</button>
+          </div>
+
+          <form id="login-form" class="form" autocomplete="on">
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" required placeholder="you@example.com" autocomplete="username" />
+            </label>
+            <button type="submit" class="btn" id="login-continue-btn">Continue</button>
+
+            <div id="login-methods" class="login-methods hidden">
+              <p class="kicker">Choose how to log in</p>
+              <div class="login-options" role="radiogroup" aria-label="Login method">
+                <button type="button" class="login-option" data-method="password" role="radio" aria-checked="false">
+                  <span class="login-option-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="4" y="11" width="16" height="10" rx="2" />
+                      <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                    </svg>
+                  </span>
+                  <span class="login-option-title">Password</span>
+                  <span class="login-option-sub">Use your account password</span>
+                </button>
+                <button type="button" class="login-option" data-method="fingerprint" role="radio" aria-checked="false">
+                  <span class="login-option-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4" />
+                      <path d="M14 13.12c0 2.38 0 6.38-1 8.88" />
+                      <path d="M17.29 21.02c.12-.6.43-2.3.5-3.02" />
+                      <path d="M2 12a10 10 0 0 1 18-6" />
+                      <path d="M2 16h.01" />
+                      <path d="M21.8 16c.2-2 .131-5.354 0-6" />
+                      <path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2" />
+                      <path d="M8.65 22c.21-.66.45-1.32.57-2" />
+                      <path d="M9 6.8a6 6 0 0 1 9 5.2v2" />
+                    </svg>
+                  </span>
+                  <span class="login-option-title">Fingerprint</span>
+                  <span class="login-option-sub">Use a wallet passkey (Touch ID)</span>
+                </button>
+              </div>
+
+              <div id="login-password-step" class="login-password-step hidden">
+                <label class="field">
+                  <span>Password</span>
+                  <input
+                    type="password"
+                    name="password"
+                    required
+                    minlength="8"
+                    placeholder="••••••••"
+                    autocomplete="current-password"
+                    disabled
+                  />
+                </label>
+                <button type="submit" class="btn">Log in</button>
+              </div>
+            </div>
+          </form>
+
+          <form id="signup-form" class="form hidden" autocomplete="on">
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" required placeholder="you@example.com" />
+            </label>
+            <label class="field">
+              <span>Password</span>
+              <input
+                type="password"
+                name="password"
+                required
+                minlength="8"
+                placeholder="Min. 8 characters"
+              />
+            </label>
+            <div class="signup-fingerprint" id="signup-fingerprint">
+              <div class="signup-fingerprint-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4" />
+                  <path d="M14 13.12c0 2.38 0 6.38-1 8.88" />
+                  <path d="M17.29 21.02c.12-.6.43-2.3.5-3.02" />
+                  <path d="M2 12a10 10 0 0 1 18-6" />
+                  <path d="M2 16h.01" />
+                  <path d="M21.8 16c.2-2 .131-5.354 0-6" />
+                  <path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2" />
+                  <path d="M8.65 22c.21-.66.45-1.32.57-2" />
+                  <path d="M9 6.8a6 6 0 0 1 9 5.2v2" />
+                </svg>
+              </div>
+              <div class="signup-fingerprint-copy">
+                <p class="signup-fingerprint-title">Fingerprint</p>
+                <p class="fingerprint-status" id="signup-fingerprint-status">Not registered</p>
+                <p class="hint" id="signup-fingerprint-note">
+                  Protects sensitive actions, like deleting a wallet if you ever choose to. Uses
+                  your device sensor (e.g. Touch ID).
+                </p>
+              </div>
+              <button type="button" id="signup-fingerprint-btn" class="btn ghost-btn">Register</button>
+            </div>
+            <button type="submit" class="btn">Create account</button>
+          </form>
+        </section>
+
+        <section id="app-panel" class="view hidden">
+          <div id="wallets-view">
+            <h1 class="view-title">Your Wallets</h1>
+            <p class="view-sub">
+              Signed in as <strong id="user-email">—</strong>
+            </p>
+
+            <form id="create-wallet-form" class="form stacked">
+              <label class="field">
+                <span>New wallet name</span>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  maxlength="64"
+                  placeholder="e.g. Trading, Savings"
+                />
+              </label>
+              <button type="submit" class="btn">Create wallet</button>
+            </form>
+
+            <div class="list-head">
+              <p class="kicker">Your wallets</p>
+            </div>
+            <div id="wallets-list" class="list"></div>
+            <p id="wallets-empty" class="empty-copy hidden">
+              No wallets yet. Create one with a name above.
+            </p>
+          </div>
+
+          <div id="seed-view" class="hidden">
+            <h1 class="view-title">Seed phrase</h1>
+            <p class="view-sub" id="seed-wallet-label">—</p>
+            <p class="seed-warning">
+              Anyone with these words can control this wallet. Never share them. Store them
+              offline.
+            </p>
+
+            <form id="reveal-seed-form" class="form stacked">
+              <label class="field">
+                <span>Signup password</span>
+                <input
+                  type="password"
+                  name="password"
+                  required
+                  minlength="8"
+                  placeholder="Confirm to reveal seed"
+                  autocomplete="current-password"
+                />
+              </label>
+              <button type="submit" class="btn" id="reveal-seed-btn">Reveal seed phrase</button>
+            </form>
+
+            <div id="seed-words-panel" class="seed-words-panel hidden">
+              <ol id="seed-words" class="seed-words"></ol>
+              <button type="button" id="copy-seed-btn" class="btn ghost-btn">Copy phrase</button>
+              <button type="button" id="hide-seed-btn" class="text-btn">Hide seed phrase</button>
+            </div>
+
+            <div id="seed-fingerprint-callout" class="callout hidden">
+              <p class="callout-title">Secure this wallet with your fingerprint</p>
+              <p class="hint">
+                Your fingerprint protects sensitive actions, such as deleting this wallet if you
+                ever choose to. You can register it now while you set things up.
+              </p>
+              <button type="button" id="seed-fingerprint-btn" class="btn ghost-btn">
+                Set up fingerprint
+              </button>
+            </div>
+          </div>
+
+          <div id="accounts-view" class="hidden">
+            <h1 class="view-title" id="accounts-wallet-name">Accounts</h1>
+            <p class="view-sub" id="accounts-meta">—</p>
+            <button type="button" id="view-seed-from-accounts" class="text-btn seed-link">
+              View seed phrase
+            </button>
+
+            <div id="portfolio-panel" class="portfolio-panel hidden">
+              <p class="kicker">Total portfolio</p>
+              <div id="portfolio-totals" class="portfolio-totals"></div>
+            </div>
+
+            <div id="accounts-list" class="list"></div>
+            <p id="accounts-empty" class="empty-copy hidden">
+              No accounts yet. Confirm your signup password to add the first one.
+            </p>
+
+            <form id="add-account-form" class="form stacked add-account-form">
+              <p class="kicker">Add account</p>
+              <label class="field">
+                <span>Account name</span>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  maxlength="64"
+                  placeholder="e.g. ethereum, bitcoin, solana"
+                />
+              </label>
+              <label class="field">
+                <span>Network</span>
+                <select name="network" id="network-select" required>
+                  <option value="" disabled selected>Select a network</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Signup password</span>
+                <input
+                  type="password"
+                  name="password"
+                  required
+                  minlength="8"
+                  placeholder="Confirm your password"
+                  autocomplete="current-password"
+                />
+              </label>
+              <button type="submit" class="btn" id="add-account-btn">Add account</button>
+              <p class="hint" id="account-limit-hint"></p>
+            </form>
+
+            <p id="accounts-maxed" class="empty-copy hidden">
+              Maximum accounts reached for this wallet.
+            </p>
+
+            <div class="danger-zone">
+              <p class="kicker">Danger zone</p>
+              <p class="danger-zone-title">Delete wallet</p>
+              <p class="hint">
+                Optional. If you ever choose to, you can permanently delete this wallet and its
+                accounts from TON 618. This action requires your password and fingerprint.
+              </p>
+              <button type="button" id="open-delete-wallet-btn" class="btn danger-ghost-btn">
+                Delete wallet
+              </button>
+            </div>
+          </div>
+
+          <div id="account-detail-view" class="hidden">
+            <h1 class="view-title" id="detail-account-name">Account</h1>
+            <p class="view-sub" id="detail-network">—</p>
+
+            <div class="detail-balance">
+              <p class="kicker">Balance</p>
+              <p class="balance-value" id="detail-balance">…</p>
+            </div>
+
+            <div class="detail-address-block">
+              <p class="kicker">Your address</p>
+              <p class="mono address-full" id="detail-address">—</p>
+              <button type="button" id="copy-address-btn" class="btn ghost-btn">
+                Copy address
+              </button>
+            </div>
+
+            <div class="action-tabs" role="tablist" aria-label="Transfer mode">
+              <button type="button" class="mode active" data-transfer="receive">Receive</button>
+              <button type="button" class="mode" data-transfer="send">Send</button>
+            </div>
+
+            <div id="receive-panel" class="transfer-panel">
+              <p class="view-sub receive-copy">
+                Share this address to receive tokens on this network. Balances update after
+                each confirmed transaction.
+              </p>
+              <button type="button" id="refresh-balance-btn" class="btn ghost-btn">
+                Refresh balance
+              </button>
+            </div>
+
+            <div id="send-panel" class="transfer-panel hidden">
+              <form id="send-form" class="form stacked">
+                <label class="field">
+                  <span>Send to</span>
+                  <select name="destination" id="send-destination">
+                    <option value="custom">Any address</option>
+                  </select>
+                </label>
+                <label class="field" id="custom-address-field">
+                  <span>Destination address</span>
+                  <input
+                    type="text"
+                    name="to_address"
+                    id="send-to-address"
+                    placeholder="0x… or network address"
+                    autocomplete="off"
+                  />
+                </label>
+                <label class="field">
+                  <span>Amount</span>
+                  <input
+                    type="text"
+                    name="amount"
+                    id="send-amount"
+                    required
+                    inputmode="decimal"
+                    placeholder="0.01"
+                  />
+                </label>
+                <label class="field">
+                  <span>Signup password</span>
+                  <input
+                    type="password"
+                    name="password"
+                    required
+                    minlength="8"
+                    placeholder="Confirm to sign &amp; send"
+                    autocomplete="current-password"
+                  />
+                </label>
+                <button type="submit" class="btn" id="send-btn">Send</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="settings-view" class="hidden">
+            <h1 class="view-title">Account settings</h1>
+            <p class="view-sub">
+              Signed in as <strong id="settings-email">—</strong>
+            </p>
+
+            <form id="change-email-form" class="form settings-card">
+              <p class="kicker">Change email</p>
+              <label class="field">
+                <span>New email</span>
+                <input type="email" name="new_email" required placeholder="new@example.com" autocomplete="email" />
+              </label>
+              <label class="field">
+                <span>Current password</span>
+                <input
+                  type="password"
+                  name="password"
+                  required
+                  minlength="8"
+                  placeholder="Confirm it's you"
+                  autocomplete="current-password"
+                />
+              </label>
+              <button type="submit" class="btn" id="change-email-btn">Update email</button>
+            </form>
+
+            <form id="change-password-form" class="form settings-card">
+              <p class="kicker">Change password</p>
+              <label class="field">
+                <span>Current password</span>
+                <input
+                  type="password"
+                  name="current_password"
+                  required
+                  minlength="8"
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                />
+              </label>
+              <label class="field">
+                <span>New password</span>
+                <input
+                  type="password"
+                  name="new_password"
+                  required
+                  minlength="8"
+                  placeholder="Min. 8 characters"
+                  autocomplete="new-password"
+                />
+              </label>
+              <label class="field">
+                <span>Confirm new password</span>
+                <input
+                  type="password"
+                  name="confirm_password"
+                  required
+                  minlength="8"
+                  placeholder="Repeat new password"
+                  autocomplete="new-password"
+                />
+              </label>
+              <button type="submit" class="btn" id="change-password-btn">Update password</button>
+            </form>
+
+            <div class="settings-card">
+              <p class="kicker">Fingerprint</p>
+              <p class="fingerprint-status" id="fingerprint-status">Not registered</p>
+              <p class="hint">
+                Each wallet has its own fingerprint passkey. Any active wallet passkey can be used
+                to log in, and deleting a wallet permanently revokes its passkey.
+              </p>
+              <div id="settings-wallet-passkeys" class="passkey-list"></div>
+            </div>
+          </div>
+
+          <div id="fingerprint-view" class="hidden">
+            <div class="fingerprint-hero" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4" />
+                <path d="M14 13.12c0 2.38 0 6.38-1 8.88" />
+                <path d="M17.29 21.02c.12-.6.43-2.3.5-3.02" />
+                <path d="M2 12a10 10 0 0 1 18-6" />
+                <path d="M2 16h.01" />
+                <path d="M21.8 16c.2-2 .131-5.354 0-6" />
+                <path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2" />
+                <path d="M8.65 22c.21-.66.45-1.32.57-2" />
+                <path d="M9 6.8a6 6 0 0 1 9 5.2v2" />
+              </svg>
+            </div>
+            <h1 class="view-title">Secure with fingerprint</h1>
+            <p class="view-sub" id="fingerprint-view-copy">
+              Register your device's fingerprint sensor (e.g. Touch ID). Together with your
+              password, it protects sensitive actions such as deleting a wallet, if you ever
+              choose to.
+            </p>
+            <p id="fingerprint-support-note" class="seed-warning hidden"></p>
+            <button type="button" id="register-fingerprint-btn" class="btn">Register fingerprint</button>
+            <button type="button" id="skip-fingerprint-btn" class="text-btn skip-btn">Skip for now</button>
+          </div>
+
+          <div id="delete-wallet-view" class="hidden">
+            <h1 class="view-title">Delete wallet</h1>
+            <p class="view-sub" id="delete-wallet-label">—</p>
+            <p class="danger-warning">
+              This removes the wallet and all of its accounts from TON 618. Funds stay on-chain,
+              but you can only recover them with this wallet's seed phrase — make sure it's saved.
+            </p>
+
+            <div id="delete-no-fingerprint" class="callout hidden">
+              <p class="callout-title">No fingerprint for this wallet</p>
+              <p class="hint">
+                Deleting a wallet requires the fingerprint passkey linked to that wallet. Set one
+                up first if you want to continue.
+              </p>
+              <button type="button" id="delete-register-fingerprint-btn" class="btn ghost-btn">
+                Set up fingerprint
+              </button>
+            </div>
+
+            <form id="delete-wallet-form" class="form stacked">
+              <label class="field">
+                <span>Password</span>
+                <input
+                  type="password"
+                  name="password"
+                  required
+                  minlength="8"
+                  placeholder="Confirm your password"
+                  autocomplete="current-password"
+                />
+              </label>
+              <button type="submit" class="btn danger-btn" id="delete-wallet-btn">
+                Verify fingerprint &amp; delete
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </main>
+    </div>
+
+    <dialog id="seed-prompt" class="modal" aria-labelledby="seed-prompt-title">
+      <form method="dialog" class="modal-body">
+        <div class="modal-icon" aria-hidden="true">!</div>
+        <h2 id="seed-prompt-title" class="modal-title">View your seed phrase?</h2>
+        <p class="modal-copy">
+          Wallet “<span id="seed-prompt-wallet">—</span>” is ready. Its seed phrase is the only way
+          to recover this wallet. Only view it somewhere private, and never share it.
+        </p>
+        <p class="hint">
+          If you skip, you can view it later from the wallet's “Seed phrase” option with your
+          password.
+        </p>
+        <div class="modal-actions">
+          <button type="submit" value="no" class="btn ghost-btn">No, skip for now</button>
+          <button type="submit" value="yes" class="btn" autofocus>Yes, show phrase</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="/static/app.js?v=11"></script>
+  </body>
+</html>
